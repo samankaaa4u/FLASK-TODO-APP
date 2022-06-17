@@ -1,10 +1,8 @@
-# FLASK-TODO-APP
-
 # DEMO:
 
     $ https://www.youtube.com/watch?v=iSDIYjcBOZo
 
-# Requirements:
+# REQUIREMENTS:
 
 1.) dotenv
 
