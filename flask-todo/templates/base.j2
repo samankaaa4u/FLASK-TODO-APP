@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>
+            {% block title %}
+                
+            {% endblock %}
+        </title>
+
+        <link href="/static/style.css" rel="stylesheet"/>
+        {% block css %}
+            
+        {% endblock %}
+        
+    </head>
+    <body>
+        {% block header %}
+
+        {% endblock %}
+
+        {% block body %}
+            
+        {% endblock %}
+
+        {% block footer %}
+
+        {% endblock %}
+            
+        {% block javascript %}
+            
+        {% endblock %}
+        
+    </body>
+</html>

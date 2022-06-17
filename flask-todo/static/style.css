@@ -1,0 +1,127 @@
+:root{
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    
+    --color-dark-1: #000000;
+    --color-dark-2: #14213d;
+    --color-accent-1: #fca311;
+    --color-accent-2: #d62828;
+    --color-accent-3: #8ac926;
+    --color-white-1: #e5e5e5;
+    --color-white-2: #ffffff;
+}
+
+
+
+
+body{
+    background: var(--color-dark-2);
+    min-height: 100vh;
+}
+
+button{
+    min-width: 6rem;
+    height: 3rem;
+    font-weight: 900;
+    background-color: var(--color-dark-2);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 200ms ease-in-out;
+    
+}
+button:hover{
+    background-color: var(--color-accent-1);
+    
+}
+
+input{
+    height:3rem;
+    width: 99%;
+    
+}
+hr{
+    margin-top:1.5rem;
+    margin-bottom:1.5rem;
+}
+
+.login{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.login > form{
+    padding:5rem;
+    width: 40%;
+    background: white;
+    border-radius: 5px;
+}
+
+.container{
+    width: 70%;
+    margin: auto;
+}
+.todo-add{
+    background-color: var(--color-white-2);
+    padding: 1rem;
+}
+textarea{
+    width: 100%;
+    font-size: large;
+}
+.app-header{
+    background-color: var(--color-white-2);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.todos{
+    background-color: var(--color-white-2);
+    padding: 1rem;
+}
+.todo-table{
+    width:100%;
+}
+
+
+
+
+.todo-table, th, td {
+    border: 1px solid #bfbfbf;
+    border-collapse: collapse;
+    text-align: left;
+    padding:1rem;
+
+}
+.todo-table tr:nth-child(odd){
+
+    background-color: var(--color-white-1);
+}
+.actions{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+.action-view, .action-edit, .action-delete{
+    font-size: xx-small;
+    padding: 0.5rem;
+    height: 2rem;
+    min-width: 4rem;
+    
+}
+.action-delete, .delete{
+    background: var(--color-accent-2);
+}
+
+.status{
+    color: white;
+    padding: 0.5rem;
+    font-size: x-small;
+    border-radius: 5px;
+}
+.status-STARTED{
+    background: var(--color-accent-3);
+    
+    
+}
+
+

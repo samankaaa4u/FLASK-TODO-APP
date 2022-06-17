@@ -1,0 +1,41 @@
+{% extends 'base.j2' %}
+
+
+{% block body %}
+    <!-- Heading -->
+    <div class="container app-header">
+        <p>User: {{ user['username'] }}</p>
+        <form action="/auth/logout" method="POST"><button type="sumit">Logout</button></form>
+    </div>
+    <div class="container">
+        <hr/>
+    </div>
+    <!-- Create todo -->
+    <div class="container todo-add">
+        <form action="/app/todo" method="POST">
+            <h1>TODO APP</h1>
+            <hr/>
+            <h4>Title: </h4>
+            <input name="title" type="text" value=" {{ todos['title'] }}"/>
+            
+            <h4>Description</h4>
+            <textarea cols="127" id="" name="description" rows="10"> {{ todos['description'] }}</textarea>
+            <hr/>
+            <h3>Status</h3>
+            <select id="" name="" style="padding: 1rem;">
+                {% for i in status %}
+                    {% if i[0] == todos['status_id'] %}
+                        <option value="{{ i[0] }}" selected>{{ i[1] }}</option>
+                    {% else %}
+                        <option value="{{ i[0] }}">{{ i[1] }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            <hr/>
+            <button type="submit">EDIT</button>
+        </form>
+            <button type="submit" class="delete">DELETE</button>
+    </div>
+    <!-- create todo end -->
+
+{% endblock %}

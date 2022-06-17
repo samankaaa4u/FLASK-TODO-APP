@@ -1,0 +1,76 @@
+
+{% extends 'base.j2' %}
+
+
+{% block body %}
+    <!-- Heading -->
+    <div class="container app-header">
+        <p>User: {{ user['username'] }}</p>
+        <form action="/auth/logout" method="POST"><button type="sumit">Logout</button></form>
+    </div>
+    <div class="container">
+        <hr/>
+    </div>
+    <!-- Heading end -->
+
+    <!-- Create todo -->
+    <div class="container todo-add">
+        <form action="/app/todo" method="POST">
+            <h1>TODO APP</h1>
+            <hr/>
+            <h4>Title: </h4>
+            <input name="title" type="text" value=""/>
+            
+            <h4>Description</h4>
+            <textarea cols="127" id="" name="description" rows="10"></textarea>
+            <hr/>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+    <!-- create todo end -->
+
+
+    
+    <div class="container">
+        <hr/>
+    </div>
+    
+    <div class="container todo-add">
+        <table class="todo-table"  >
+
+            {% if todos == [] %}
+                <p>No todos found!</p>
+            {% else %}
+                <tr>
+                    <th width="5%"> No. </th>
+                    <th width="45%"> Title</th>
+                    <th> Status </th>
+                    <th> Date Added</th>
+                    <th> Date Updated</th>
+                    <th width="20%"> Action</th>
+                    
+                </tr>
+                {% for todo in todos %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td> {{ todo[1]  }}</td>
+                        <td>
+                            <div class="status status-{{ todo[5] }}">
+                                {{ todo[5] }}
+                            </div>
+                        </td>
+
+                        <td> {{ todo[3]  }}</td>
+                        <td>{{ todo[4] }}</td>
+                        <td class="actions">
+                            <form action="/app/todo/{{ todo[0] }}" method="GET"><button class="action-view">VIEW</button></form>
+                            <form action="/app/todo/{{ todo[0] }}" method="GET"><button class="action-edit">EDIT</button></form>
+                            <form action="/app/todo" method="DELETE"><button class="action-delete">DELETE</button></form>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            {% endif %}
+        </table>
+    </div>
+{% endblock %}
